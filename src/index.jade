@@ -1,0 +1,78 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title Esri-Leaflet
+
+    link(rel='stylesheet', type='text/css', href='build/build.css')
+
+  body
+
+    article
+
+      section
+        h1 Esri-Leaflet
+        h3 Lightning Talk
+        p Joshua Tanner
+        p Oregon Web Geographers - 5/18/2016
+
+      section
+        h2 Leaflet.js
+        p Lighweight (33kb) Mapping Library
+        p <a href="http://leafletjs.com/#features" target="_blank">Feature</a> Packed
+        p Lots of <a href="http://leafletjs.com/plugins.html" target="_blank">Plugins</a>
+
+      section
+        h2  Create Map
+        pre
+          code.language-javascript.
+            var map = L.map('map');
+
+      section
+        h2 Esri JavaScript API
+        p Framework for Building Map Apps
+        p Powerful Collection of Tools and Features
+        p Relies Heavily on Dojo
+        p Easily Add Esri Services
+
+      section
+        h2  Create Map
+        pre
+          code.language-javascript.
+            var map;
+
+            require(["esri/map","dojo/domReady!"],
+              function(Map, Tiled) {
+                map = new Map("map");
+              }
+            );
+
+      section
+        h2 Esri Leaflet
+        p Leaflet <a href="https://github.com/Esri/esri-leaflet" target="_blank">Plugin</a> for ArcGIS
+        p Easily Add ArcGIS Services
+
+      section
+        h2  Add Feature Service
+        pre
+          code.language-javascript.
+            var map = L.map('map').setView([45.526, -122.667], 13);
+            L.esri.basemapLayer('Streets').addTo(map);
+            L.esri.featureLayer({
+              url: '../arcgis/rest/services/.../FeatureServer/0'
+            }).addTo(map);
+
+      section
+        h2 Example
+        div(id='map_example')
+
+      section
+        h2 Why Learn Esri-Leaflet
+        p Build lightweight mapping components into your app
+        p Use Leaflet with ArcGIS Server or ArcGIS Online services
+        p Understand how developers are consuming authoritative government content
+        p Easier for New Developers
+
+
+    script(src='build/build.js')
